@@ -31,16 +31,16 @@ magic:
     mov ebp, esp
     sub esp, 8
 
-    mov eax, 37 ; Magic num
-    mov dword [ebp+16], eax
-    mov eax, dword [ebp+16]
+    mov eax, 25h ; Magic num
+    mov dword [ebp+10h], eax
+    mov eax, dword [ebp+10h]
     add eax, eax
-    mov [esp+20], eax
-    mov ecx, [esp+20]
+    mov [esp+14h], eax
+    mov ecx, [esp+14h]
     sar ecx, 3
     mov eax, ecx
-    mov [esp+24], eax
-    mov edx, [esp+24]
+    mov dword [esp+18h], eax
+    mov edx, dword [esp+18h]
     shl edx, 2
     mov ecx, edx
     mov [esp+8], ecx
