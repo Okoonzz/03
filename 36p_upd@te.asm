@@ -36,14 +36,19 @@ magic:
     mov eax, dword [ebp+10h]
     add eax, eax
     mov [esp+14h], eax
+    xor ecx, ecx
     mov ecx, [esp+14h]
     sar ecx, 3
+    xor eax, eax
     mov eax, ecx
     mov dword [esp+18h], eax
     mov edx, dword [esp+18h]
     shl edx, 2
     mov ecx, edx
     mov [esp+8], ecx
+    xor ecx, ecx
+    test cl, cl
+    jnz chek
     mov ecx, [esp+8]
     add ecx, 1
     add edx, 8
@@ -54,4 +59,13 @@ magic:
     
     leave
     ret
+  
+chek:
+    mov eax, 30h
+    add eax, eax
+    imul eax, 12h
+    nop
+    mov ecx, 05h
+    div ecx
+
 ;;; Nonsense or magic is up to each individual. ;;;
