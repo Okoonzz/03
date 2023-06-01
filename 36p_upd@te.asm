@@ -39,15 +39,15 @@ magic:
     xor ecx, ecx
     mov ecx, [esp+14h]
     sar ecx, 3
-    xor eax, eax
     mov eax, ecx
     mov dword [esp+18h], eax
+    xor eax, eax
     mov edx, dword [esp+18h]
     shl edx, 2
     mov ecx, edx
     mov [esp+8], ecx
     xor ecx, ecx
-    test cl, cl
+    test cl, al
     jnz chek
     mov ecx, [esp+8]
     add ecx, 1
