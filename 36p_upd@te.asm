@@ -8,7 +8,7 @@ section .text
 _start:
     call magic
     mov ebx, eax
-    add eax, '0' ; convert Sth from magic
+    add eax, 30h ; convert Sth from magic
     mov [number], eax
 
     mov eax, 4
